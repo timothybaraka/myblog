@@ -11,8 +11,16 @@ app.set('view engine','ejs');
 app.listen(3000);
 
 app.get('/',(req,res)=>{
-    //res.send('<p>Home page</p>');         //sets the content type,infers status code
-    res.render('index',{title:'Home'})});
+    const blogs = [
+        {title: 'Yoshi finds eggs', snippet:'Lorem ipsum sit amet'},
+        {title: 'Yoshi finds eggs', snippet:'Lorem ipsum sit amet'},
+        {title: 'Yoshi finds eggs', snippet:'Lorem ipsum sit amet'},
+    ];
+            //sets the content type,infers status code
+        res.render('index',{ title:'Home',blogs:blogs });
+});
+
+
 
 app.get('/about',(req,res)=>{
    // res.send('<p>About Page!!</p>');         //sets the content type,infers status code
